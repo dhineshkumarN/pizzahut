@@ -1,0 +1,13 @@
+{%  extends 'pizza/base.html' %}
+{% block 'body' %}
+<div class="container">
+{% load widget_tweaks %}
+<h1>Pizzas page</h1>
+<h2>{{note}}</h2>
+<form action="{% url 'pizzas' %}" method="post">
+    {% csrf_token %}
+    {{ formset }}
+     <input type="submit" value="Order Pizza">
+</form>
+</div>
+{% endblock %}
